@@ -4,7 +4,8 @@ import User from "../models/userModel.js";
 
 const protectRoute = asyncHandler(async (request, response, next) => {
   let token;
-
+  console.log(request.cookies, "protectRoute request cookies");
+  console.log(request.cookies.jwt, "protectRoute request cookies jwt");
   // Using cookieParser middleware
   token = request.cookies.jwt; 
 

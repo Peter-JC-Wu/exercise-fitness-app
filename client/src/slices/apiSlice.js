@@ -3,10 +3,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // production: process.env.REACT_APP_BACKEND_API_URL
-// dev: http://localhost:3000
+// dev: http://localhost:6000
 // baseUrl is an empty string because of using a proxy
 const baseQuery = fetchBaseQuery({ 
-  baseUrl: process.env.REACT_APP_BACKEND_API_URL,
+  // baseUrl: process.env.REACT_APP_BACKEND_API_URL,
+  baseUrl: "http://localhost:5001"
 });
 
 export const apiSlice = createApi({

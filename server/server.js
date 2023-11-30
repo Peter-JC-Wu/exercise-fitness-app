@@ -15,9 +15,10 @@ connectMongoDB();
 const app = express();
 
 // Server setup
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server started and is listening on port: ${port}`));
 
+// Enable CORS for all routes
 app.use(cors());
 
 // Add middleware to access body data
