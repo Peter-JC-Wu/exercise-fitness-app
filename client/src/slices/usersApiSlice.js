@@ -56,7 +56,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     // Fetch saved exercise list from Login User Saved Favorite Exercises List
     fetchSavedFaveExercisesList: builder.query({
       query: (data) => ({
-        url: `${API_URL}/favoriteexercisesdashboard/`,
+        url: `${API_URL}/favoriteexercisesdashboard`,
         method: "GET",
         body: data,
       }),
@@ -64,7 +64,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     // Update saved exercise list from Login User Saved Favorite Exercises List
     updateSavedFaveExercisesList: builder.mutation({
       query: (data) => ({
-        url: `${API_URL}/favoriteexercisesdashboard/`,
+        url: `${API_URL}/favoriteexercisesdashboard`,
         method: "PUT",
         body: data,
       }),
