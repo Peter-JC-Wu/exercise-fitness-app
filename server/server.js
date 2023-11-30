@@ -18,8 +18,11 @@ const app = express();
 const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server started and is listening on port: ${port}`));
 
-// Enable CORS for all routes
-app.use(cors());
+// Enable CORS
+app.use(cors({
+  origin: "https://exercise-fitness-app-client.onrender.com",
+  credentials: true,
+}));
 
 // Add middleware to access body data
 app.use(express.json());

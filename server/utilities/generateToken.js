@@ -6,11 +6,13 @@ const generateToken = (response, keyId) => {
     expiresIn: "30d",
   });
 
+  console.log("Generated Token:", token);
+
   // Generate JWT-cookie
   response.cookie("jwt", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV !== "development", // Use secure cookies when in production mode
-    sameSite: "strict", // Prevent CSRF attacks
+    sameSite: "None",
     maxAge: 30 * 24 * 60 * 60 * 1000, // Expires in 30 days
   });
 };

@@ -34,6 +34,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/profile`,
         method: "PUT",
+        credentials: "include",
         body: data,
       }),
     }),
@@ -42,6 +43,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "POST",
+        credentials: "include",
         body: data,
       }),
     }),
@@ -50,6 +52,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (exerciseId) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "DELETE",
+        credentials: "include",
         body: exerciseId,
       }),
     }),
@@ -58,6 +61,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "GET",
+        credentials: "include",
         body: data,
       }),
     }),
@@ -66,6 +70,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "PUT",
+        credentials: "include",
         body: data,
       }),
     }),
