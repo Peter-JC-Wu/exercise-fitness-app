@@ -99,9 +99,9 @@ Explore the user-friendly interface:
 
 ## Deployment
 
-- Render Link: <a href="https://exercise-fitness-app-client.onrender.com" target="_blank">https://exercise-fitness-app-client.onrender.com</a>
+- Render Link: [https://exercise-fitness-app-client.onrender.com](https://exercise-fitness-app-client.onrender.com)
 
-- Vercel Link: <a href="https://exercise-fitness-app-client.vercel.app/" target="_blank">https://exercise-fitness-app-client.vercel.app/</a>
+- Vercel Link: [https://exercise-fitness-app-client.vercel.app](https://exercise-fitness-app-client.vercel.app)
 
 ## License
 
@@ -109,5 +109,5 @@ This project is licensed under the [ISC License](LICENSE).
 
 ## Acknowledgments
 
-- Special thanks to friends, mentor <a href="https://github.com/osamaahmed17" target="_blank">(Osama Tahir)</a>, and <a href="https://parsity.io/" target="_blank">Parsity Online Code School</a>.
-- Inspired by Rapid API <a href="https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb" target="_blank">(ExerciseDB)</a>.
+- Special thanks to friends, mentor [(Osama Tahir)](https://github.com/osamaahmed17), and [Parsity Online Code School](https://parsity.io/).
+- Inspired by Rapid API [(ExerciseDB)](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb).
