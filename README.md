@@ -99,7 +99,9 @@ Explore the user-friendly interface:
 
 ## Deployment
 
-Will update this section with link when deployed online.
+- Render Link: [https://exercise-fitness-app-client.onrender.com](https://exercise-fitness-app-client.onrender.com)
+
+- Vercel Link: [https://exercise-fitness-app-client.vercel.app/](https://exercise-fitness-app-client.vercel.app/)
 
 ## License
 
