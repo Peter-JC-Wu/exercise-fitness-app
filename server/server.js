@@ -20,7 +20,7 @@ app.listen(port, () => console.log(`Server started and is listening on port: ${p
 
 // Enable CORS
 app.use(cors({
-  origin: ["https://exercise-fitness-app-client.onrender.com", "https://exercise-fitness-app-client-670cdynj0-peter-wu-projects.vercel.app"],
+  origin: process.env.ALLOWED_ORIGIN,
   credentials: true,
 }));
 
