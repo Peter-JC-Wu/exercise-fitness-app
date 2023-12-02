@@ -19,8 +19,9 @@ const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server started and is listening on port: ${port}`));
 
 // Enable CORS
+app.options("*", cors());
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN,
+  origin: "*",
   credentials: true,
 }));
 
