@@ -101,7 +101,7 @@ Explore the user-friendly interface:
 
 - Render Link: [https://exercise-fitness-app-client.onrender.com](https://exercise-fitness-app-client.onrender.com)
 
-- Vercel Link: [https://exercise-fitness-app-client.vercel.app](https://exercise-fitness-app-client.vercel.app)
+- Vercel Link: [https://exercise-fitness-app-client-670cdynj0-peter-wu-projects.vercel.app](https://exercise-fitness-app-client-670cdynj0-peter-wu-projects.vercel.app)
 
 ## License
 
