@@ -1,4 +1,5 @@
 import { apiSlice } from "./apiSlice";
+import { clearCredentials, setCredentials } from "./authSlice";
 
 const API_URL = "/api/users";
 
@@ -11,9 +12,12 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/auth`,
         method: "POST",
-        credentials: "include",
         body: data,
       }),
+      // Update the 'onSuccess' callback to dispatch the new action
+      onSuccess: (response, variables, api, dispatch) => {
+        dispatch(setCredentials(response)); // Set user information in Redux store and local storage
+      },
     }),
     // Logout User
     logout: builder.mutation({
@@ -21,22 +25,28 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${API_URL}/logout`,
         method: "POST",
       }),
+      // Update the 'onSuccess' callback to dispatch the new action
+      onSuccess: (response, variables, api, dispatch) => {
+        dispatch(clearCredentials()); // Clear user information from Redux store and local storage
+      },
     }),
     // Register User
     register: builder.mutation({
       query: (data) => ({
         url: `${API_URL}`,
         method: "POST",
-        credentials: "include",
         body: data,
       }),
+      // Update the 'onSuccess' callback to dispatch the new action
+      onSuccess: (response, variables, api, dispatch) => {
+        dispatch(setCredentials(response)); // Set user information in Redux store and local storage
+      },
     }),
     // Update User Profile
     updateUserProfile: builder.mutation({
       query: (data) => ({
         url: `${API_URL}/profile`,
         method: "PUT",
-        credentials: "include",
         body: data,
       }),
     }),
@@ -45,7 +55,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "POST",
-        credentials: "include",
         body: data,
       }),
     }),
@@ -54,7 +63,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (exerciseId) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "DELETE",
-        credentials: "include",
         body: exerciseId,
       }),
     }),
@@ -63,7 +71,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "GET",
-        credentials: "include",
         body: data,
       }),
     }),
@@ -72,7 +79,6 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${API_URL}/favoriteexercisesdashboard`,
         method: "PUT",
-        credentials: "include",
         body: data,
       }),
     }),

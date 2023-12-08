@@ -10,13 +10,13 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    // Action to set userInfo to local storage when logged in
+    // Action to set userInfo to local storage and Redux store when logged in
     setCredentials: (state, action) => {
       state.userInfo = action.payload;
       localStorage.setItem("userInfo", JSON.stringify(action.payload));
     },
-    // Action to remove userInfo from local storage when logged out
-    clearCredentials: (state, action) => {
+    // Action to remove userInfo from local storage and Redux store when logged out 
+    clearCredentials: (state) => {
       state.userInfo = null;
       localStorage.removeItem("userInfo");
     },

@@ -13,7 +13,7 @@ const authUser = asyncHandler(async (request, response) => {
   const user = await User.findOne({$or: [{ name }, { email }]});
 
   if(user && (await user.matchPassword(password))) {
-    generateToken(response, user._id);
+    const token = generateToken(user._id);
 
     response.status(201).json({
       userId: user._id,
@@ -23,6 +23,7 @@ const authUser = asyncHandler(async (request, response) => {
       savedFavoriteExercisesList: user.savedFavoriteExercisesList,
       workoutList: user.workoutList,
       completedWorkoutList: user.completedWorkoutList,
+      token,
     });
   } else {
     response.status(401);
@@ -60,7 +61,7 @@ const registerUser = asyncHandler(async (request, response) => {
 
   // Generate JWT-cookie along with response
   if(user) {
-    generateToken(response, user._id);
+    const token = generateToken(user._id);
 
     response.status(201).json({
       _id: user._id,
@@ -70,6 +71,7 @@ const registerUser = asyncHandler(async (request, response) => {
       savedFavoriteExercisesList: user.savedFavoriteExercisesList,
       workoutList: user.workoutList,
       completedWorkoutList: user.completedWorkoutList,
+      token,
     });
   } else {
     response.status(401);
@@ -77,14 +79,14 @@ const registerUser = asyncHandler(async (request, response) => {
   }
 }); 
 
-// @description   Logout user and clear JWT-cookie
+// @description   Logout user and clear JWT-cookie from local storage
 // @route         POST /api/users/logout
 // @access        Public - can access URL without logging in
-const logoutUser = asyncHandler(async (request, response) => {
-  response.cookie('jwt', '', {
-    httpOnly: true,
-    expires: new Date(0),
-  })
+const logoutUser = asyncHandler(async (request, response) => {  
+  // response.cookie('jwt', '', {
+  //   httpOnly: true,
+  //   expires: new Date(0),
+  // })
 
   response.status(200).json({ message: "User logged out successfully" });
 }); 

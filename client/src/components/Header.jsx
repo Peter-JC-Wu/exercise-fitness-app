@@ -1,3 +1,4 @@
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaSignInAlt, FaSignOutAlt,FaUser, FaUserCheck } from "react-icons/fa";
@@ -5,6 +6,9 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { clearCredentials } from "../slices/authSlice";
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Logo from "../assets/images/dumbbell-health-logo.png";
 import FaveList from "../assets/icons/favorites-list.png";
 
@@ -18,15 +22,42 @@ const Header = () => {
 
   const [logout] = useLogoutMutation();
 
-  const logoutHandler = async () => {
+  const logoutHandler = useCallback(async () => {
     try {
       await logout().unwrap();
+      // Clear userInfo from Redux state and local storage (including the token)
       dispatch(clearCredentials());
       navigate("/"); // Where do I want to send the user after logging out?
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [dispatch, logout, navigate]);
+
+  // Effect to check token expiration and logout if necessary
+  useEffect(() => {
+    const checkTokenExpiration = () => {
+      // Check if user is logged in and has a token
+      if (userInfo && userInfo.token) {
+        const decodedToken = jwtDecode(userInfo.token);
+
+        // Check if the token has expired
+        if (decodedToken.exp * 1000 < Date.now()) {
+          // Token has expired, logout the user
+          toast.error("Your session has expired. Please log in again.");
+          logoutHandler();
+        }
+      }
+    };
+
+    // Check token expiration on mount
+    checkTokenExpiration();
+
+    // Set up an interval to check token expiration periodically
+    const intervalId = setInterval(checkTokenExpiration, 15 * 60 * 1000); // Check every 15 minutes
+
+    // Clean up the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, [userInfo, logoutHandler]);
 
   return (
     <header>
