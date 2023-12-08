@@ -1,9 +1,9 @@
 import path from "path";
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
+import dotenv from "dotenv";
 dotenv.config();
-import cookieParser from "cookie-parser";
+// import cookieParser from "cookie-parser";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import connectMongoDB from "./config/mongoDB.js";
 import userRoutes from "./routes/userRoutes.js";
@@ -19,18 +19,14 @@ const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server started and is listening on port: ${port}`));
 
 // Enable CORS
-app.options("*", cors());
-app.use(cors({
-  origin: "*",
-  credentials: true,
-}));
+app.use(cors());
 
 // Add middleware to access body data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Add middleware to parse the cookie
-app.use(cookieParser());
+// app.use(cookieParser());
 
 app.use("/api/users", userRoutes);
 app.use("/api/users", exerciseRoutes);

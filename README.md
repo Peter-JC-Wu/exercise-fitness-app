@@ -101,8 +101,6 @@ Explore the user-friendly interface:
 
 - Render Link: [https://exercise-fitness-app-client.onrender.com](https://exercise-fitness-app-client.onrender.com)
 
-- Vercel Link: [https://exercise-fitness-app-client.vercel.app](https://exercise-fitness-app-client.vercel.app)
-
 ## License
 
 This project is licensed under the [ISC License](LICENSE).
