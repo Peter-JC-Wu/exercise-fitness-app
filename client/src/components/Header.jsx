@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaSignInAlt, FaSignOutAlt,FaUser, FaUserCheck } from "react-icons/fa";
@@ -22,14 +22,22 @@ const Header = () => {
 
   const [logout] = useLogoutMutation();
 
+  // Local state to track the logout process for auto-logout
+  const [loggingOut, setLoggingOut] = useState(false);
+
   const logoutHandler = useCallback(async () => {
     try {
+      // Set loggingOut to true before starting the logout operation
+      setLoggingOut(true);
       await logout().unwrap();
       // Clear userInfo from Redux state and local storage (including the token)
       dispatch(clearCredentials());
       navigate("/"); // Where do I want to send the user after logging out?
     } catch (err) {
       console.log(err);
+    } finally {
+      // Set loggingOut to false after the logout operation completes (success or failure)
+      setLoggingOut(false);
     }
   }, [dispatch, logout, navigate]);
 
@@ -53,7 +61,7 @@ const Header = () => {
     checkTokenExpiration();
 
     // Set up an interval to check token expiration periodically
-    const intervalId = setInterval(checkTokenExpiration, 15 * 60 * 1000); // Check every 15 minutes
+    const intervalId = setInterval(checkTokenExpiration, 1 * 60 * 1000); // Check every 15 minutes
 
     // Clean up the interval when the component is unmounted
     return () => clearInterval(intervalId);
@@ -81,7 +89,8 @@ const Header = () => {
                         <FaUserCheck /> Profile 
                       </NavDropdown.Item>
                     </LinkContainer>
-                    <NavDropdown.Item onClick={logoutHandler}>
+                    {/* Disable the Logout button while logging out */}
+                    <NavDropdown.Item onClick={logoutHandler} disabled={loggingOut}>
                       <FaSignOutAlt /> Logout
                     </NavDropdown.Item>
                   </NavDropdown> 
