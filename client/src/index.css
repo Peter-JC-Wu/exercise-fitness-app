@@ -248,13 +248,21 @@ html {
 @media screen and (max-width: 992px) {
   .navbar-nav .nav-link {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     text-align: center;
   }
 }
 
-@media screen and (max-width: 556px) {
+@media screen and (max-width: 400px) {
   .exercise-card {
-    width: 280px;
+    width: 100%;
+  }
+
+  .navbar-brand .brand-text {
+    font-size: 12px;
+  }
+
+  .navbar-brand .nav-link img {
+    display: none;
   }
 }

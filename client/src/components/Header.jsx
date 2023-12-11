@@ -73,7 +73,7 @@ const Header = () => {
         <Container>
           <LinkContainer to="/dashboard">
             <Navbar.Brand>
-            <img src={Logo} alt="logo" 
+            <img src={Logo} alt="HeaderLogo" 
               style={{width: "48px", height: "48px", margin: "0 20px"}}/>
               My Exercise Planner Fitness App
             </Navbar.Brand>
