@@ -221,7 +221,7 @@ html {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   .detail-image {
     width: 300px;
     height: 300px;
@@ -245,7 +245,15 @@ html {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 992px) {
+  .navbar-nav .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 556px) {
   .exercise-card {
     width: 280px;
   }
