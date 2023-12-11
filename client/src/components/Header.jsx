@@ -61,7 +61,7 @@ const Header = () => {
     checkTokenExpiration();
 
     // Set up an interval to check token expiration periodically
-    const intervalId = setInterval(checkTokenExpiration, 1 * 60 * 1000); // Check every 15 minutes
+    const intervalId = setInterval(checkTokenExpiration, 15 * 60 * 1000); // Check every 15 minutes
 
     // Clean up the interval when the component is unmounted
     return () => clearInterval(intervalId);
@@ -99,7 +99,7 @@ const Header = () => {
                     <Nav.Link>
                       <Navbar.Text>
                         Favorite Exercises <img src={FaveList} alt="favorite exercises list" 
-              style={{width: "22px", height: "22px", margin: "0 5px"}}/>
+                        style={{width: "22px", height: "22px", margin: "0 5px"}}/>
                       </Navbar.Text>
                     </Nav.Link>
                   </LinkContainer>

@@ -30,14 +30,15 @@ const DashboardHero = () => {
         position="relative"
         p="20px"
         marginTop="50px"
+        marginBottom="80px"
       >
         <Typography color="#ff2625" fontWeight="700" fontSize="36px">
           {userInfo && userInfo.name}, welcome to your dashboard!
         </Typography>
         <Typography fontWeight="700" sx={{ fontSize: { lg: "44px", xs: "40px"}}}>
           Plan your workout and <br /> 
-          let's accomplish your fitness <br /> 
-          goal to {userInfo && userInfo.fitnessGoal}!
+          let's accomplish your <br /> 
+          fitness goal to {userInfo && userInfo.fitnessGoal}!
         </Typography>
         <Typography fontSize="22px" lineHeight="35px">
           Search for exercises and learn how to safely perform them.
