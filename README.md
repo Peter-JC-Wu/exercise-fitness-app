@@ -8,8 +8,13 @@ The Exercise Fitness App is a full-stack MERN web application with CRUD function
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+  - [Client Side](#client-side)
+  - [Server Side](#server-side)
 - [Getting Started](#getting-started)
+  - [Installation](#installation)
 - [Usage](#usage)
+  - [Desktop View](#desktop)
+  - [Mobile View](#mobile)
 - [Deployment](#deployment)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -31,7 +36,6 @@ The Exercise Fitness App is a full-stack MERN web application with CRUD function
 - React
 - Redux Toolkit for state management
 - Material-UI for UI components
-- Axios for HTTP requests
 - React Router for navigation
 - Bootstrap for styling
 - React-Toastify
@@ -46,6 +50,8 @@ The Exercise Fitness App is a full-stack MERN web application with CRUD function
 - NodeJS
 
 ## Getting Started
+
+### Installation
 
 Running the Project Locally:
 
@@ -64,7 +70,7 @@ Running the Project Locally:
 
 3. **Set Up Environment Variables:**
 
-   - Create a `.env` file in the root of the `exercise-fitness-app` folder.
+   - Create a `.env` file in the root of the `exercise-fitness-app` client and server folders.
    - Add the necessary environment variables, such as MongoDB connection string and JWT secret.
 
 4. **Run the Application:**
@@ -75,27 +81,54 @@ Running the Project Locally:
 
    This will start both the server and client applications concurrently.
 
+   ```bash
+   npm run start
+   ```
+
+   This will start both the server application separately.
+
+   ```bash
+   npm run client
+   ```
+
+   This will start both the client application separately.
+
 5. **Access the App:**
    Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to access the Exercise Fitness App.
 
 ## Usage
 
-Explore the user-friendly interface:
+### Desktop
+
+Explore the user-friendly desktop interface:
 
 - **Login/Register Page:**
-  ![LoginRegisterPage](client/src/assets/images/Exercise-loginRegisterPage.png)
+  ![LoginRegisterPage](client/src/assets/images/DesktopView-homepage.png)
 
 - **Welcome Dashboard:**
-  ![WelcomeDashboard](client/src/assets/images/Screenshot-welcomeDashboardPage.png)
+  ![WelcomeDashboard](client/src/assets/images/DesktopView-welcomeDashboard.png)
 
 - **Exercise Search Results:**
-  ![ExerciseSearchResults](client/src/assets/images/Screenshot-ExerciseResultsPage.png)
+  ![ExerciseSearchResults](client/src/assets/images/DesktopView-ExerciseResultsPage.png)
 
 - **More Exercise Options at the Details Page:**
-  ![moreOptionsDetails](client/src/assets/images/Screenshot-otherOptionsPage.png)
+  ![moreOptionsDetails](client/src/assets/images/DesktopView-otherOptionsPage.png)
 
 - **Favorites List:**
-  ![FavoritesList](client/src/assets/images/Screenshot-favoriteListPage.png)
+  ![FavoritesList](client/src/assets/images/DesktopView-favoriteListPage.png)
+
+### Mobile
+
+Explore the user-friendly mobile interface:
+
+- **Login/Register Page:**
+  ![LoginRegisterPage](client/src/assets/images/mobileView-loginRegisterPage.png)
+
+- **Exercise Search Results:**
+  ![ExerciseSearchResults](client/src/assets/images/mobileView-exerciseResultsPage.png)
+
+- **Favorites List:**
+  ![FavoritesList](client/src/assets/images/mobileView-faveList.png)
 
 ## Deployment
 
