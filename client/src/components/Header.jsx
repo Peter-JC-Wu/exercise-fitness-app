@@ -75,7 +75,7 @@ const Header = () => {
             <Navbar.Brand>
             <img src={Logo} alt="HeaderLogo" 
               style={{width: "48px", height: "48px", margin: "0 20px"}}/>
-              My Exercise Planner Fitness App
+              Exercise Planner App
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
