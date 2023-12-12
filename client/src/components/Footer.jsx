@@ -13,7 +13,7 @@ const Footer = () => {
             <LinkContainer to="/dashboard">
               <Nav.Link >
                 <img src={FooterLogo} alt="footer-logo" width="auto" height="55px" />
-                <Navbar.Text>Stronger Mind and Body Fitness by Wu &copy;{currentYear}</Navbar.Text>
+                <Navbar.Text>Wu Tech Fitness &copy;{currentYear}</Navbar.Text>
               </Nav.Link>
             </LinkContainer>
           </Nav>

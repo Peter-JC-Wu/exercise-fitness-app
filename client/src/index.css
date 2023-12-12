@@ -22,8 +22,11 @@ html {
   }
 
   .detail-image {
-    width: 729px;
-    height: 742px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 
   .navbar-text {
@@ -104,8 +107,9 @@ html {
   }
 
   .exercise-card-box {
-    width: 400px;
-    height: 477px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     background: #fff;
     border-top: 4px solid #ff2625;
     border-bottom-left-radius: 20px;
@@ -119,8 +123,8 @@ html {
   }
 
   .exercise-card {
-    width: 400px;
-    height: 477px;
+    width: 100%;
+    height: auto;
     background: #fff;
     border-top: 4px solid #ff2625;
     border-bottom-left-radius: 20px;
@@ -222,11 +226,6 @@ html {
 }
 
 @media screen and (max-width: 1400px) {
-  .detail-image {
-    width: 300px;
-    height: 300px;
-  }
-
   .react-horizontal-scrolling-menu--scroll-container {
     width: 500px;
   }
@@ -254,8 +253,9 @@ html {
 }
 
 @media screen and (max-width: 400px) {
-  .exercise-card {
+  .exercise-card-box {
     width: 100%;
+    height: auto;
   }
 
   .navbar-brand .brand-text {
@@ -264,5 +264,15 @@ html {
 
   .navbar-brand .nav-link img {
     display: none;
+  }
+
+  .search-btn {
+    right: 10px;
+  }
+
+  .MuiPagination-ul {
+    display: flex;
+    justify-content: center;
+    width: auto;
   }
 }

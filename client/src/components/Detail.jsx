@@ -123,9 +123,9 @@ const Detail = ({ exerciseDetailToDisplay, user }) => {
   };
 
   return (
-    <Stack gap="60px" sx={{flexDirection: { lg: "row" }, pt: "25px", alignItems: "center"}}>
-      <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
-      <Stack sx={{ gap: { lg: "35px", xs: "20px" }}}>
+    <Stack gap="60px" sx={{flexDirection: { lg: "row" }, pt: "20px", alignItems: "center"}}>
+      <img src={gifUrl} alt={name} loading="lazy" className="detail-image" sx={{ flex: 0.5 }} />
+      <Stack sx={{ gap: { lg: "15px", xs: "10px" }, flex: 3 }}>
         <Typography variant="h3" textTransform="capitalize">
           {name}
         </Typography>
