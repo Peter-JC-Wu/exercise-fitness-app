@@ -122,12 +122,15 @@ Explore the user-friendly desktop interface:
 Explore the user-friendly mobile interface:
 
 - **Login/Register Page:**
+
   ![LoginRegisterPage](client/src/assets/images/mobileView-loginRegisterPage.png)
 
 - **Exercise Search Results:**
+
   ![ExerciseSearchResults](client/src/assets/images/mobileView-exerciseResultsPage.png)
 
 - **Favorites List:**
+
   ![FavoritesList](client/src/assets/images/mobileView-faveList.png)
 
 ## Deployment
