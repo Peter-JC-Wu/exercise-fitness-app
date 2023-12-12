@@ -14,6 +14,6 @@ export const exercisesApiSlice = createApi({
   reducerPath: "exercisesApi",
   baseQuery,
   tagTypes: ["exercises"],
-  keepUnusedDataFor: 60 * 60,
+  keepUnusedDataFor: 60 * 60 * 24 * 1,
   endpoints: (builder) => ({})
 });
