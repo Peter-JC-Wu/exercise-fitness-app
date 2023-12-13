@@ -1,8 +1,8 @@
-# Exercise Fitness App
+# Exercise Planner App
 
 ## Overview
 
-The Exercise Fitness App is a full-stack MERN web application with CRUD functionality designed to help users discover, manage, and track their favorite exercises. In my previous careers as a firefighter and personal trainer, fitness is a huge part of my lifestyle. As a new software programmer, I want to share the joys of learning new exercises. This application provides a user-friendly interface for exploring a vast collection of exercises, saving personal favorites, and receiving personalized recommendations. The application follows a client-server architecture, utilizing React on the client side and Express with MongoDB on the server side.
+The Exercise Planner App is a dynamic full-stack MERN web application with CRUD functionality designed to empower users on their fitness journey. Meticulously crafted with a passion for health and well-being, this app is the brainchild of a personal trainer and former firefighter, now venturing into the world of software engineering. This application provides a user-friendly interface for exploring a vast collection of exercises, curate a personal collection of favorites, and ultimately create personalized workout plans to elevate your fitness experience. This holistic application follows a client-server architecture, utilizing React on the client side and Express with MongoDB on the server side. The Exercise Planner App is your companion for achieving fitness goals with efficiency and enjoyment. Join us on this transformative lifestyle journey to a healthier and fitter you!
 
 ## Table of Contents
 
@@ -21,13 +21,13 @@ The Exercise Fitness App is a full-stack MERN web application with CRUD function
 
 ## Features
 
-- **Explore Exercises:** Browse a comprehensive list of exercises with details such as muscle targets, equipment requirements, and instructions.
+- **Explore Exercises:** Browse the comprehensive database of exercises with details such as muscle targets, equipment requirements, and step-by-step instructions.
 
-- **Save Favorites:** Users can create an account, log in, and save their favorite exercises for quick access.
+- **Save Favorites:** Users can create an account, log in, and save their favorite exercises for quick and convenient access.
 
 - **Sorting and Filtering:** Organize exercises based on various criteria such as name, body part, target muscle, and more.
 
-- **Responsive Design:** The user interface is designed to be responsive, ensuring a seamless experience across different devices and screen sizes.
+- **Responsive Design:** The user interface is designed to be intuitive, ensuring a seamless experience across different devices and screen sizes.
 
 ## Tech Stack
 
@@ -43,11 +43,11 @@ The Exercise Fitness App is a full-stack MERN web application with CRUD function
 
 ### Server Side
 
-- Express.js
 - MongoDB with Mongoose for data storage
+- Express.js
+- NodeJS
 - JWT for user authentication
 - Bcrypt for password hashing
-- NodeJS
 
 ## Getting Started
 
@@ -58,8 +58,8 @@ Running the Project Locally:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/Peter-JC-Wu/exercise-fitness-app.git
-   cd exercise-fitness-app
+   git clone https://github.com/Peter-JC-Wu/exercise-planner-app.git
+   cd exercise-planner-app
    ```
 
 2. **Install Dependencies:**
@@ -70,7 +70,7 @@ Running the Project Locally:
 
 3. **Set Up Environment Variables:**
 
-   - Create a `.env` file in the root of the `exercise-fitness-app` client and server folders.
+   - Create a `.env` file in the root of the `exercise-planner-app` client and server folders.
    - Add the necessary environment variables, such as MongoDB connection string and JWT secret.
 
 4. **Run the Application:**
@@ -82,19 +82,19 @@ Running the Project Locally:
    This will start both the server and client applications concurrently.
 
    ```bash
-   npm run start
+   npm start
    ```
 
-   This will start both the server application separately.
+   This will start the server application separately.
 
    ```bash
-   npm run client
+   npm start
    ```
 
-   This will start both the client application separately.
+   This will start the client application separately.
 
 5. **Access the App:**
-   Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to access the Exercise Fitness App.
+   Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to access the Exercise Planner App.
 
 ## Usage
 
@@ -135,7 +135,7 @@ Explore the user-friendly mobile interface:
 
 ## Deployment
 
-- Render Link: [https://exercise-fitness-app-client.onrender.com](https://exercise-fitness-app-client.onrender.com)
+- Render Link: [https://exercise-planner-app-client.onrender.com](https://exercise-planner-app-client.onrender.com)
 
 ## License
 
