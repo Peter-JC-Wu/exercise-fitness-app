@@ -56,7 +56,7 @@ const Profile = () => {
           fitnessGoal,
         }).unwrap();
         dispatch(setCredentials({ ...response }));
-        toast.success("Profile information updated successfully. Please login again.");
+        toast.success("Profile information updated successfully. If password is updated, please login again.");
       } catch (err) {
         toast.error(err?.data?.message || err.error);
       }
