@@ -31,6 +31,7 @@ const UserSchema = new Schema({
     },
     exerciseId: {
       type: String,
+      unique: true,
     },
   }],
   workoutList: [{ 

@@ -10,6 +10,7 @@ const SavedFavoriteExerciseSchema = new Schema({
   exerciseId: {
     type: String,
     required: true,
+    unique: true,
   },
   name: {
     type: String,
