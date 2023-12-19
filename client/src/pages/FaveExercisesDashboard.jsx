@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { useFetchSavedFaveExercisesListQuery } from "../slices/usersApiSlice";
@@ -20,7 +20,7 @@ const FaveExercisesDashboard = () => {
   const user = useSelector((state) => state.auth.userInfo);
 
   // Use query hook to fetch saved exercises data
-  const { data: fetchedSavedExercisesListDataFromMongoDB, isFetching, isLoading } = useFetchSavedFaveExercisesListQuery();
+  const { data: fetchedSavedExercisesListDataFromMongoDB, isFetching, isLoading, refetch } = useFetchSavedFaveExercisesListQuery();
 
   // Get the current location to parse and initialize the currentPage from the URL
   const location = useLocation();
@@ -28,6 +28,11 @@ const FaveExercisesDashboard = () => {
   const currentPageFromURL = searchParams.get("page");
   const parsedPage = parseInt(currentPageFromURL, 10);
   const [currentPage, setCurrentPage] = useState(isNaN(parsedPage) ? 1 : parsedPage);
+
+  // Use the useEffect hook to refetch data when the component mounts or when the URL changes
+  useEffect(() => {
+    refetch();
+  }, [location.pathname, refetch]);
 
   return (
     <Stack alignItems="center" justifyContent="center" sx={{ mt: "20px", mb: "110px"}}>
