@@ -10,7 +10,6 @@ const SavedFavoriteExerciseSchema = new Schema({
   exerciseId: {
     type: String,
     required: true,
-    unique: true,
   },
   name: {
     type: String,
@@ -41,7 +40,9 @@ const SavedFavoriteExerciseSchema = new Schema({
     required: true,
   },
   user: { 
-    type: Schema.Types.ObjectId, ref: "User" 
+    type: Schema.Types.ObjectId, 
+    ref: "User",
+    required: true, 
   },
 }, { timestamps: true });
 

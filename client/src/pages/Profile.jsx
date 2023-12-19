@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, FloatingLabel } from "react-bootstrap";
-import { useUpdateUserProfileMutation } from "../slices/usersApiSlice";
-import { setCredentials } from "../slices/authSlice";
+import { useLogoutMutation, useUpdateUserProfileMutation } from "../slices/usersApiSlice";
+import { clearCredentials, setCredentials } from "../slices/authSlice";
 import { FaUserCheck } from "react-icons/fa";
 import { toast } from "react-toastify";
 import FormContainer from "../components/FormContainer";
@@ -24,6 +24,18 @@ const Profile = () => {
   const { userInfo } = useSelector((state) => state.auth);
 
   const [updateProfile, { isLoading }] = useUpdateUserProfileMutation();
+  const [logout] = useLogoutMutation();
+
+  const logoutHandler = async () => {
+    try {
+      await logout().unwrap();
+      // Clear userInfo from Redux state and local storage (including the token)
+      dispatch(clearCredentials());
+      navigate("/login"); 
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     setName(userInfo.name);
@@ -56,7 +68,9 @@ const Profile = () => {
           fitnessGoal,
         }).unwrap();
         dispatch(setCredentials({ ...response }));
-        toast.success("Profile information updated successfully. If password is updated, please login again.");
+        toast.success("Profile information updated successfully. Your session has been logged out for security purposes. Please log in again to continue.");
+        // Automatically logout the user
+        logoutHandler();
       } catch (err) {
         toast.error(err?.data?.message || err.error);
       }
