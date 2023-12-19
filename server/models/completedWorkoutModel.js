@@ -10,7 +10,9 @@ const CompletedWorkoutsSchema = new Schema({
     type: Schema.Types.ObjectId, ref: "workoutList"
   }],
   user: { 
-    type: Schema.Types.ObjectId, ref: "User" 
+    type: Schema.Types.ObjectId, 
+    ref: "User", 
+    required: true, 
   },
 }, { timestamps: true });
 

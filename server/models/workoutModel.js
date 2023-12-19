@@ -22,7 +22,9 @@ const WorkoutSchema = new Schema({
     type: Schema.Types.ObjectId, ref: "savedFavoriteExercisesList" 
   }],
   user: { 
-    type: Schema.Types.ObjectId, ref: "User" 
+    type: Schema.Types.ObjectId, 
+    ref: "User",
+    required: true, 
   },
 }, { timestamps: true });
 
